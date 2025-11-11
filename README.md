@@ -95,5 +95,5 @@ sequenceDiagram
 - Requirements are minimized to `streamlit` and `openai`.
 
 ## Sample data (optional)
-- You can place files from the bounty-targets-data repository into a local `data/` folder to try the app with real bug bounty program scopes (e.g., `domains.txt`, `wildcards.txt`, `bugcrowd_data.json`, `hackerone_data.json`, `intigriti_data.json`, `yeswehack_data.json`). <mcreference link="https://github.com/arkadiyt/bounty-targets-data" index="0"></mcreference>
+- You can place files from the [bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) repository into a local `data/` folder to try the app with real bug bounty program scopes (e.g., `domains.txt`, `wildcards.txt`, `bugcrowd_data.json`, `hackerone_data.json`, `intigriti_data.json`, `yeswehack_data.json`).
 - Use the sidebar’s Upload control to add these files to your Active store; the app will wait until indexing completes before they’re available for search.
