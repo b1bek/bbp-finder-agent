@@ -25,7 +25,7 @@ def get_active_vector_store_id():
 # --- Streamlit UI ---
 st.set_page_config(page_title="Bug Bounty Program Finder", page_icon="🔎", layout="centered")
 st.title("Bug Bounty Program Finder")
-st.write("Enter email, org name, domain/URLs to check if a bug bounty program exists.")
+st.write("Enter email, org name, domain/URLs, or any info to see if a bug bounty program (BBP) exists.")
 
 user_text = st.text_area(
     "Input",
@@ -45,10 +45,16 @@ if st.button("Find Program"):
             try:
                 # Build a concise instruction leveraging File Search tool
                 prompt = (
-                    "You're assigned a task to determine whether a bug bounty program exists for the given input. "
+                    # "You're assigned a task to determine whether a bug bounty program exists for the given input. "
+                    # "Use the file_search tool on the provided vector store to verify. "
+                    # "Respond strictly only in JSON object 'Found' (Yes/No), 'Source', 'Rewards' (Yes/No), and 'Program Url'. "
+                    # f"Input: {user_text.strip()}"
+                    "You’re assigned a task to determine whether a bug bounty program exists for the given input. "
                     "Use the file_search tool on the provided vector store to verify. "
-                    "Respond strictly in JSON with keys 'Found' (Yes/No), 'Source', 'Rewards' (Yes/No), and 'Program Url'. "
+                    "Respond strictly in a **single JSON object only**, with no explanations or extra text. "
+                    "Fields required: 'Found' (Yes/No), 'Source', 'Rewards' (Yes/No), 'Program Url'. "
                     f"Input: {user_text.strip()}"
+
                 )
 
                 response = client.responses.create(

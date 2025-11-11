@@ -1,0 +1,8 @@
+# Streamlit config to disable telemetry and file watching
+[browser]
+gatherUsageStats = false
+
+[server]
+# Avoid file system monitoring (watchdog) in production containers
+fileWatcherType = "none"
+runOnSave = false

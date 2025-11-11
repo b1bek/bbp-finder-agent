@@ -12,6 +12,8 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy app code
 COPY app.py /app/app.py
+# Copy Streamlit config to disable telemetry
+COPY .streamlit /app/.streamlit
 
 EXPOSE 8501
 
